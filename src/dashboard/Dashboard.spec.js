@@ -22,4 +22,5 @@ describe('Dashborad Component', () => {
     test('macthes the snapshot', () =>{
         expect(wrapper.container).toMatchSnapshot();
     })
+
 })

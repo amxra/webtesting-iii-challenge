@@ -21,3 +21,9 @@ describe('Controls Component', () => {
         expect(wrapper.container).toMatchSnapshot();
     })
 })
+
+
+
+
+
+

@@ -17,7 +17,21 @@ beforeEach(() =>{
 
 
 describe('Display Component', () => {
-    test('macthes the snapshot', () =>{
+    test('matched the snapshot', () =>{
         expect(wrapper.container).toMatchSnapshot();
     })
-})
+
+    test('it defaults to unlocked and open', () => {
+        expect(wrapper.queryByText(/unlocked/i)).toBeInTheDocument();
+        expect(wrapper.queryByText(/open/i)).toBeInTheDocument();
+    });
+
+    test('cannot close or open if locked', () => {
+        expect(wrapper.queryByText(/closed/i)).not.toBeInTheDocument();
+        expect(wrapper.queryByText(/opened/i)).not.toBeInTheDocument();
+        expect(wrapper.queryByText(/locked/i)).toBeInTheDocument();
+    })
+});
+
+
+

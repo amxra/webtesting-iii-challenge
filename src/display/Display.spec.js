@@ -3,7 +3,7 @@
 import React from 'react';
 import * as rtl from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import Display from './Display';
+import Dashboard from '../dashboard/Dashboard';
 
 
 afterEach(rtl.cleanup);
@@ -12,10 +12,12 @@ let wrapper;
 
 
 beforeEach(() =>{
-    wrapper = rtl.render(<Display/>)
+    wrapper = rtl.render(<Dashboard/>)
 })
 
 
-describe('matches the snapshot', () => {
-    expect(wrapper.container).toMacthSnapShot();
+describe('Display Component', () => {
+    test('macthes the snapshot', () =>{
+        expect(wrapper.container).toMatchSnapshot();
+    })
 })

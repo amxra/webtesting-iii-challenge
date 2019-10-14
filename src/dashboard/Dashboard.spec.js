@@ -18,9 +18,18 @@ beforeEach(() =>{
 })
 
 
-describe('Dashborad Component', () => {
+describe('Dashboard Component', () => {
     test('macthes the snapshot', () =>{
         expect(wrapper.container).toMatchSnapshot();
     })
 
+    test('shows control and display', () => {
+        expect(wrapper.queryByText(/close gate/i)).toBeInTheDocument()
+        expect(wrapper.queryByText(/lock gate/i)).toBeInTheDocument()
+        expect(wrapper.queryByText(/open gate/i)).not.toBeInTheDocument()
+        expect(wrapper.queryByText(/unlock gate/i)).not.toBeInTheDocument()
+       
+    })
+
 })
+
